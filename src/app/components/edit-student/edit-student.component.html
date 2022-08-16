@@ -1,0 +1,24 @@
+<h1>Update Student</h1>
+<div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Student updated Successfully</strong>
+    <button (click)="removeMessage()" type="button" class="close" data-bs-dismiss="alert" aria-label="Close"> X
+      <!-- <span aria-hidden="true">&times;</span> -->
+    </button>
+</div>
+
+
+<form [formGroup]="editStudent" (ngSubmit)="UpdateData()">
+    <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="Name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter Name" formControlName="name">
+        <br>
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+        <label for="exampleInputMarks">Marks</label>
+        <input type="number" class="form-control" id="exampleInputMarks" placeholder="Marks" formControlName="marks">
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
